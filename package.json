@@ -1,0 +1,23 @@
+{
+  "name": "react-native-logentries",
+  "version": "1.0.0",
+  "author": "Joel Costa <joelrfcosta@gmail.com> (https://github.com/joelrfcosta)",
+  "keywords": [
+    "react-native",
+    "react-native-logentries",
+    "react",
+    "native",
+    "log",
+    "live-log",
+    "remote-log"
+  ],
+  "nativePackage": true,
+  "scripts": {
+    "prepublish": "rm -f ./lelib/*; rm -f",
+    "postinstall": "node postinstall.js"
+  },
+  "dependencies": {
+    "download": "5.0.2",
+    "fs-extra": "1.0.0"
+  }
+}
