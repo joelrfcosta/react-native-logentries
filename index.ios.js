@@ -4,7 +4,9 @@
  */
 'use strict';
 
-import { Logentries } from 'NativeModules'
+import { NativeModules } from 'react-native'
+
+const Logentries = NativeModules.Logentries
 
 module.exports = {
   setToken: function(token: string) {
