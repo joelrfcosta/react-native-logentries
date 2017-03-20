@@ -18,7 +18,7 @@ export default class example extends Component {
   constructor(props) {
     super(props)
     this.count = 0
-    Logentries.debug = true
+    Logentries.setDebugging(true)
     Logentries.setToken("00000000-0000-0000-0000-000000000000")    
   }
 

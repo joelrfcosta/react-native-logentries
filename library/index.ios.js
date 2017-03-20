@@ -9,11 +9,15 @@ import { NativeModules } from 'react-native'
 const Logentries = NativeModules.Logentries
 
 module.exports = {
-  debug: false,
-
+  _debugLogs: false,
   _debugMessage: function(message: string) {
-    if (!this.debug) return
+    if (!this._debugLogs) return
     console.log(`Logentries: ${message}`)
+  },
+
+  setDebugging: function(debug) {
+    this._debugLogs = debug
+    Logentries.setDebugLogs(debug)
   },
   
   setToken: function(token: string) {

@@ -16,7 +16,7 @@ RCT_EXPORT_MODULE();
 - (LELog *) log {
     if (!_log) {
         _log = [LELog sharedInstance];
-        _log.debugLogs = true;
+        _log.debugLogs = false;
     }
     return _log;
 }
@@ -27,6 +27,10 @@ RCT_EXPORT_METHOD(setToken:(NSString *)token) {
 
 RCT_EXPORT_METHOD(log:(NSString *)data) {
     [self.log log:data];
+}
+
+RCT_EXPORT_METHOD(setDebugLogs:(BOOL)debug) {
+    self.log.debugLogs = debug;
 }
 
 
