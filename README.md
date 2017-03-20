@@ -34,15 +34,15 @@ Logentries.log("React Native Logentries test log")
 
 ## Debug
 
-To debug the library just set Logentries `debug` property to `true` before setting the token:
+To debug the library just enable debugging before setting the token:
 
 ``` Javascript
 constructor(props) {
   super(props)
 
-  Logentrie.debug = true
+  Logentries.setDebugging(true)
   Logentries.setToken("00000000-0000-0000-0000-000000000000")
 }
 ```
 
-It will print the messages on Developer Tools console.
+It will print the messages on `Developer Tools console` and on `System Log`.
