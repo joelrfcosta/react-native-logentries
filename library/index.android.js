@@ -6,13 +6,18 @@
  */
 'use strict';
 
-var warning = require('fbjs/lib/warning');
+import { NativeModules } from 'react-native'
+
+const Logentries = NativeModules.Logentries
+
+//var warning = require('fbjs/lib/warning');
 
 module.exports = {
   setToken: function(token: string) {
-    warning('Not yet implemented for Android.')
+    //warning('Not yet implemented for Android.')
   },
   log: function(data: string) {
-    warning('Not yet implemented for Android.')
+    Logentries.log(data);
+    console.log("Test 124");
   }
 }

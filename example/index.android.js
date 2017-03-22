@@ -12,12 +12,15 @@ import {
   View
 } from 'react-native';
 
+import Logentries from 'react-native-logentries';
+
 export default class example extends Component {
   render() {
+    Logentries.log("test");
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to React Native! 2
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.android.js
