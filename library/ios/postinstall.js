@@ -6,7 +6,7 @@ const fs = require('fs-extra')
 const leGithubURL = 'https://github.com/LogentriesCommunity/le_ios/archive/master.zip'
 const leGithubDir = 'le_ios-master'
 const leSrcDir = 'le_ios-master/lelib'
-const leDestDir = 'lelib'
+const leDestDir = 'ios/lelib'
 
 function cleanup() {
   fs.remove(leGithubDir, function (err) {

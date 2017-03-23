@@ -22,7 +22,7 @@
   },
   "nativePackage": true,
   "scripts": {
-    "postinstall": "node postinstall.js"
+    "postinstall": "node ios/postinstall.js"
   },
   "dependencies": {
     "download": "5.0.2",
