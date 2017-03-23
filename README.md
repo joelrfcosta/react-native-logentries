@@ -4,13 +4,52 @@ A React Native library that allows to log to remote logging service [Logentries]
 
 ## Installation
 
+On project root execute the following:
+
 ```
-$ rnpm install https://github.com/joelrfcosta/react-native-logentries/library
+$ npm install react-native-logentries
 ```
+
+Then link the library:
+
+```
+$ react-native link react-native-logentries
+```
+### Android
+
+On Android you need to add the following to your project `build.gradle` file under `allprojects` property:
+```
+maven { 
+  url "https://jitpack.io" 
+}
+```
+
+You will have something like this:
+```
+allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven { 
+            url "https://jitpack.io" 
+        }
+    }
+}
+```
+
+**Note** You need to add `url "https://jitpack.io"` on its own `maven` property or it will not work!
+
+### Logentries
+
+Go to Logentries.com and generate a token for your app. You can follow the documentation here https://docs.logentries.com/docs/setup-first-log
 
 ## Usage
 
-Import `Logentries` library:
+Import `Logentries` library (for example on `index.ios.js` or/and `index.android.js`):
 
 ``` Javascript
 import Logentries from 'react-native-logentries'
@@ -26,7 +65,7 @@ constructor(props) {
 }
 ```
 
-Call log function to send to Logentries:
+Call `log` function to send a message to Logentries service:
 
 ``` Javascript
 Logentries.log("React Native Logentries test log")
