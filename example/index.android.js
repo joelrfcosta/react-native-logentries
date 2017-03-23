@@ -9,25 +9,47 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
-
 import Logentries from 'react-native-logentries';
 
 export default class example extends Component {
+  constructor(props) {
+    super(props)
+    this.count = 0
+    Logentries.setDebugging(true)
+    // Generate your log (https://docs.logentries.com/docs/setup-first-log) and add it here
+    Logentries.setToken("00000000-0000-0000-0000-000000000000")
+  }
+
+  sendAnotherMessage() {
+    this.count += 1
+    Logentries.log(`Another message ${this.count}`)
+  }
+
   render() {
-    Logentries.log("test");
+    Logentries.log("Rendering...")
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native! 2
+          Welcome to{'\n'}React Native Logentries{'\n'}sample app.
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
+        <Text style={styles.instructions}>   
+          Execute Cmd+M (Ctrl+M) or shake for dev menu{'\n'}
+          and choose "Start Remote JS Debugging".{'\n'}
+          It should print on console every{'\n'}
+          Logentries action.{'\n'}
         </Text>
+        <Button
+          onPress={() => this.sendAnotherMessage()}
+          title="Send another message"
+          accessibilityLabel="Send another message to Logentries"
+        />
         <Text style={styles.instructions}>
+          {'\n'}
           Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
+          Cmd+M (Ctrl+M) or shake for dev menu{'\n'}
         </Text>
       </View>
     );
