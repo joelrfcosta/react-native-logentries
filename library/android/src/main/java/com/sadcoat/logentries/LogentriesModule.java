@@ -6,9 +6,16 @@ import com.facebook.react.bridge.ReactMethod;
 
 import android.util.Log;
 
+import java.io.IOException;
+
+import com.logentries.logger.AndroidLogger;
+
 public class LogentriesModule extends ReactContextBaseJavaModule {
+    private AndroidLogger logger = null;
+    private String token = null;
+
     public LogentriesModule(ReactApplicationContext reactContext) {
-        super(reactContext);
+        super(reactContext);             
     }
 
     @Override
@@ -17,7 +24,17 @@ public class LogentriesModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void setToken(String token) throws IOException {
+        if (this.token != token) {
+            this.logger = AndroidLogger.createInstance(getReactApplicationContext(), false, false, false, null, 0, token, false);
+            this.token = token;
+        }
+    }
+
+    @ReactMethod
     public void log(String data) {
-        //Log("Test Logentries");
+        if (this.logger != null) {
+            this.logger.log(data);
+        }
     }
 }

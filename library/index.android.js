@@ -10,14 +10,27 @@ import { NativeModules } from 'react-native'
 
 const Logentries = NativeModules.Logentries
 
-//var warning = require('fbjs/lib/warning');
-
 module.exports = {
-  setToken: function(token: string) {
-    //warning('Not yet implemented for Android.')
+  _debugLogs: false,
+  _debugMessage: function(message) {
+    if (!this._debugLogs) return
+    console.log(`Logentries: ${message}`)
   },
-  log: function(data: string) {
-    Logentries.log(data);
-    console.log("Test 124");
+
+  setDebugging: function(debug) {
+    this._debugLogs = debug
+  },
+  
+  setToken: function(token) {
+    Logentries.setToken(token);
+    this._debugMessage(`Token '${token}' registered`)
+  },
+  
+  log: function(data) {
+    Logentries.log(data)
+    this._debugMessage(`Message '${data}' sent`)
   }
+
+
+
 }
