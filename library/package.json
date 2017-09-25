@@ -4,8 +4,9 @@
   "version": "1.0.1",
   "author": "Joel Costa <joelrfcosta@gmail.com> (https://github.com/joelrfcosta)",
   "license": "MIT",
-  "contributors":[
-    "Philip Shurpik <philip.shurpik@gmail.com> (https://github.com/philipshurpik)"
+  "contributors": [
+    "Philip Shurpik <philip.shurpik@gmail.com> (https://github.com/philipshurpik)",
+    "Omer Faruk APLAK <omeraplak@gmail.com> (https://github.com/omeraplak)"
   ],
   "keywords": [
     "react-native",
