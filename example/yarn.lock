@@ -1314,8 +1314,8 @@ detect-indent@^4.0.0:
     repeating "^2.0.0"
 
 diff@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-3.2.0.tgz#c9ce393a4b7cbd0b058a725c93df299027868ff9"
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
 
 dom-walk@^0.1.0:
   version "0.1.1"
@@ -3132,8 +3132,9 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
-"react-native-logentries@file:../../react-native-logentries":
-  version "0.2.0"
+react-native-logentries@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-logentries/-/react-native-logentries-1.0.1.tgz#2ee3c6a81ca76b710cc460b3f7eed91a5517712b"
   dependencies:
     download "5.0.2"
     fs-extra "1.0.0"
